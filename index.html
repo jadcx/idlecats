@@ -1,19 +1,39 @@
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="interface.css" />
+        <title>Idle Cats - a game not a statement</title>
+        <link rel="stylesheet" type="text/css" href="interface.css" />
 	</head>
 	<body>
-		<h1>Idle Cats</h1>
-        <br />
-        <button onclick="cookieClick(1)">Click Me!</button>
-		<br />
-		Cookies: <span id="cookies">0</span>
-		<br />
-		<button onclick="buyCursor()">Buy Cursor</button>
-		<br />
-		Cursors: <span id="cursors">0</span>
-		<br />
-		Cursor Cost: <span id="cursorCost">10</span>
-		<script type="text/javascript" src="main.js"></script>
+        <h1>Idle Cats</h1>
+        <div class="nav-flex-container" id="navButtons">
+            <div class="navBtn" onclick="tab('scritchMenu'); refresh();">Scritches</div>
+            <div class="navBtn" onclick="tab('saveMenu')">Load/Save</div>
+        </div>
+        <div id="scritchMenu">
+            <div class="flex-container" id="scritchescontainer">
+                <div class="scritch-button" onclick="scritchClick(1)"></div>
+                <div class="scritch-count" style="flex-grow: 4"> Scritch a cat!<br />Scritches: <span id="scritches">0</span></div>
+            </div>
+            <br />
+            <div class="flex-container" id="autos" style="display: none;">
+                <div class="autoscritch-button" id="auto-btn" onclick="buyAutoscritcher()">Buy an autoscritcher</div>
+                <div class="autoscritchers" style="flex-grow: 4"> You have <span id="autoscritchers">0</span> auto-scritchers.<br />The next one will cost <span id="autoscritcherCost">100</span> scritches</div>
+            </div>
+            <br />
+            <div class="flex-container" id="catnipdisplay" style="display: none;">
+                <div class="catnip-button" onclick="buyCatnip()">Buy catnip.</div>
+                <div class="catniptext" style="flex-grow: 4"> You have <span id="catnip">0</span> catnip.<br />The next one will cost <span id="catnipCost">100</span> scritches</div>
+            </div>
+            <br />
+        </div>
+        <div id="saveMenu">
+            <div class="flex-container" id="saveButtons">
+                <div class="saveBtn" onclick="loadGame()">Load</div>
+                <div class="saveBtn" onclick="saveGame()">Save</div>
+                <div class="saveBtn" onclick="resetGame()">Reset</div>
+
+            </div>
+        </div>
+        <script type="text/javascript" src="main.js"></script>
 	</body>
 </html>

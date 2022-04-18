@@ -1,0 +1,99 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+  }
+
+  .nav-flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
+  }
+
+#navButtons {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    text-align: center;
+    vertical-align: middle;
+    padding: 20px;
+}
+
+.navBtn {
+    border: 5px solid grey;
+    padding: 10px;
+}
+#saveButtons {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    text-align: center;
+    vertical-align: middle;
+    padding: 20px;
+}
+
+.saveBtn {
+    border: 5px solid red;
+    padding: 10px;
+}
+
+.scritch-button {
+    flex-basis: 140px;
+    border: 10px solid goldenrod;
+    text-align: center;
+    vertical-align: middle;
+    padding: 20px;
+    background: url(../idlecats/assets/no-scritch.svg) no-repeat center;
+    background-size: cover;
+    background-origin: content-box;
+}
+.scritch-count {
+    background-color: bisque;
+    text-align: left;
+    vertical-align: middle;
+    padding: 20px;
+}
+.autoscritch-button {
+    flex-grow: 1;
+    flex-basis: 10%;
+    background-color: bisque;
+    border: 10px solid goldenrod;
+    text-align: center;
+    vertical-align: middle;
+    padding: 20px;
+}
+.available {
+    flex-grow: 1;
+    flex-basis: 10%;
+    color: azure;
+    background-color: green;
+    border: 10px solid greenyellow;
+    text-align: center;
+    vertical-align: middle;
+    padding: 20px;
+}
+.autoscritchers {
+    background-color: bisque;
+    text-align: left;
+    vertical-align: middle;
+    padding: 20px;
+}
+.catnip-button {
+    flex-basis: 10%;
+    background-color: bisque;
+    border: 10px solid goldenrod;
+    text-align: center;
+    vertical-align: middle;
+    padding: 20px;
+}
+.catniptext {
+    background-color: bisque;
+    text-align: left;
+    vertical-align: middle;
+    padding: 20px;
+}
