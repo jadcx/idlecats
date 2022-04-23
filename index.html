@@ -1,34 +1,65 @@
 <html>
 	<head>
         <title>Idle Cats - a game not a statement</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="interface.css" />
-	</head>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">    </head>
 	<body>
         <h1>Idle Cats</h1>
+        <div class="databoard-flex-container" id="databoardButtons">
+            <div class="databoardBtn"><h2>Gaining</h2><span id="scritchesPerTick">1</span></div>
+            <div class="databoardBtn"><H2>Scritches</H2><br/><span id="scritches">0</span></div>
+            <div class="databoardBtn"><h2>Spending</h2></div>
+        </div>
+        <div class="w3-container" id="ticker" style="display: none">
+            <div class="w3-light-grey">
+              <div id="tickBar" class="w3-green" style="height:24px;width:0"></div>
+            </div>
+        </div>
         <div class="nav-flex-container" id="navButtons">
             <div class="navBtn" onclick="tab('scritchMenu'); refresh();">Scritches</div>
+            <div class="navBtn" onclick="tab('catsMenu'); refresh();">Cats</div>
+            <div class="navBtn" onclick="tab('achievementsMenu'); achievedCheck();">Achievements</div>
             <div class="navBtn" onclick="tab('saveMenu')">Load/Save</div>
         </div>
         <div id="scritchMenu">
             <div class="flex-container" id="scritchescontainer">
                 <div class="scritch-button" onclick="scritchClick(1)"></div>
-                <div class="scritch-count" style="flex-grow: 4"> Scritch a cat!<br />Scritches: <span id="scritches">0</span></div>
+                <div class="scritch-count" style="flex-grow: 4"><h2>Scritch a cat!</h2><br />Cat's a highly transactional creatures, and so doing anything at all, even if it if for their benefit will 'cost' you scritches.</div>
             </div>
             <br />
             <div class="flex-container" id="autos" style="display: none;">
-                <div class="autoscritch-button" id="auto-btn" onclick="buyAutoscritcher()">Buy an autoscritcher</div>
-                <div class="autoscritchers" style="flex-grow: 4"> You have <span id="autoscritchers">0</span> auto-scritchers.<br />The next one will cost <span id="autoscritcherCost">100</span> scritches</div>
+                <div class="autoscritch-button" id="auto-btn" onclick="buyAutoscritcher()"></div>
+                <div class="autoscritchers" style="flex-grow: 4"><h2>Auto-Scritchers</h2><br/>You have <span id="autoscritchers">0</span> Auto Scritchers.<br />Each Auto Scritcher will scritch a cat every <span id="tickPeriod">5000</span> ms.<br/>The next one will cost <span id="autoscritcherCost">100</span> scritches</div>
             </div>
             <br />
             <div class="flex-container" id="catnipdisplay" style="display: none;">
                 <div class="catnip-button" onclick="buyCatnip()">Buy catnip.</div>
-                <div class="catniptext" style="flex-grow: 4"> You have <span id="catnip">0</span> catnip.<br />The next one will cost <span id="catnipCost">100</span> scritches</div>
+                <div class="catniptext" style="flex-grow: 4"><h2>Catnip</h2><br/>You have <span id="catnip">0</span> catnip.<br />Catnip increases the effectiveness of Auto Scritchers.</br>The next one will cost <span id="catnipCost">100</span> scritches</div>
             </div>
             <br />
         </div>
+        <div id="catsMenu">
+            <h2>Cats</h2>
+        </div>
+        <div id="achievementsMenu">
+            <h2>Total achievements: <span id="achievementsTotal">0</span></h2>
+            <h2>Scritch clicks: <span id="scritchclicks">0</span></h2>
+            <div class="achievements-flex-container" id="clickAchievements">
+                <div class="achievement" id="clickAch01">100 clicks</div>
+                <div class="achievement" id="clickAch02">250 clicks</div>
+                <div class="achievement" id="clickAch03">500 clicks</div>
+                <div class="achievement" id="clickAch04">1000 clicks</div>
+                <div class="achievement" id="clickAch05">5k clicks</div>
+                <div class="achievement" id="clickAch06">10k clicks</div>
+                <div class="achievement" id="clickAch07">20k clicks</div>
+                <div class="achievement" id="clickAch08">50k clicks</div>
+                <div class="achievement" id="clickAch09">100k clicks</div>
+                <div class="achievement" id="clickAch10">500k clicks</div>
+            </div>
+        </div>
         <div id="saveMenu">
-            <div class="flex-container" id="saveButtons">
-                <div class="saveBtn" onclick="loadGame()">Load</div>
+            <div class="nav-flex-container" id="saveButtons">
                 <div class="saveBtn" onclick="saveGame()">Save</div>
                 <div class="saveBtn" onclick="resetGame()">Reset</div>
 
